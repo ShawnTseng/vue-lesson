@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>Products</h1>
-    <h2>{{id}}</h2>
+    <h2>{{showId}}</h2>
     <h3>{{queryStringId}}</h3>
   </div>
 </template>
@@ -14,9 +14,10 @@ const products = {
 };
 
 export default {
+  props: ["id"],
   computed: {
-    id() {
-      return products[this.$route.params.id];
+    showId() {
+      return products[this.id];
     },
     queryStringId() {
       return this.$route.query.id;

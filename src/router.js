@@ -36,7 +36,12 @@ export default new VueRouter({
                     ]
                 },
                 // path to regexp
-                { path: "products/:id?", name: 'prod', component: Products },
+                {
+                    path: "products/:id?",
+                    name: 'prod',
+                    component: Products,
+                    props: true
+                },
                 { path: 'aboutus', redirect: '/about/us' },
                 // { path: '*', redirect: '/about/us' }
                 { path: '*', redirect: { name: 'home' } }

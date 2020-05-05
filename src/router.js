@@ -40,7 +40,13 @@ export default new VueRouter({
                     path: "products/:id?",
                     name: 'prod',
                     component: Products,
-                    props: true
+                    props: true,
+                    // props: { id: 3 }
+                    // props: route => {
+                    //     return {
+                    //         id: route.params.id
+                    //     }
+                    // }
                 },
                 { path: 'aboutus', redirect: '/about/us' },
                 // { path: '*', redirect: '/about/us' }

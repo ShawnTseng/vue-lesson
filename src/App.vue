@@ -1,5 +1,11 @@
 <template>
   <div>
+    <div class="menu">
+      <router-link to="/about">About</router-link>
+      <br />
+      <router-link to="/products">Products</router-link>
+    </div>
+    <router-view></router-view>
     <TodoInput @submit="addTodo" />
     <ul>
       <TodoItem
@@ -13,10 +19,19 @@
 </template>
 
 <script>
+import VueRouter from "vue-router";
 import TodoInput from "./components/TodoInput.vue";
 import TodoItem from "./components/TodoItem.vue";
+import Products from "./components/Products.vue";
+import About from "./components/About.vue";
 
 export default {
+  router: new VueRouter({
+    routes: [
+      { path: "/about", component: About },
+      { path: "/products", component: Products }
+    ]
+  }),
   data() {
     return {
       todos: []

@@ -24,7 +24,13 @@ export default new VueRouter({
                     children: [
                         { path: "", component: AboutHome },
                         { path: "us", name: 'us', component: AboutUs },
-                        { path: "you", component: AboutYou }
+                        { path: "you", component: AboutYou },
+                        {
+                            path: 'both', components: {
+                                default: AboutUs,
+                                second: AboutYou
+                            }
+                        }
                     ]
                 },
                 // path to regexp

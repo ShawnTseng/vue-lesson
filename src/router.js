@@ -20,9 +20,11 @@ export default new VueRouter({
             children: [
                 {
                     path: "about",
+                    // alias: 'story',
+                    alias: ['story', 'abouthome'],
                     component: About,
                     children: [
-                        { path: "", component: AboutHome },
+                        { path: "", name: 'home', component: AboutHome },
                         { path: "us", name: 'us', component: AboutUs },
                         { path: "you", component: AboutYou },
                         {
@@ -34,7 +36,10 @@ export default new VueRouter({
                     ]
                 },
                 // path to regexp
-                { path: "products/:id?", name: 'prod', component: Products }
+                { path: "products/:id?", name: 'prod', component: Products },
+                { path: 'aboutus', redirect: '/about/us' },
+                // { path: '*', redirect: '/about/us' }
+                { path: '*', redirect: { name: 'home' } }
             ]
         }
     ]

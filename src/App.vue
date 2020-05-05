@@ -29,7 +29,8 @@ export default {
   router: new VueRouter({
     routes: [
       { path: "/about", component: About },
-      { path: "/products", component: Products }
+      // path to regexp
+      { path: "/products/:id?", component: Products }
     ]
   }),
   data() {

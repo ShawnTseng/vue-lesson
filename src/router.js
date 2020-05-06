@@ -13,6 +13,8 @@ import AboutHome from "./components/AboutHome.vue";
 Vue.use(VueRouter);
 
 export default new VueRouter({
+    // mode: 'hash', // default
+    mode: 'history', // backend: url rewrite
     routes: [
         {
             path: '/',
